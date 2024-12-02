@@ -34,12 +34,7 @@ Based data March 18, 2024 the datasets on this page are backed by a new data sou
 2. Create GCP Bucket: `gcloud storage buckets create gs://imdb-data-2024 --location=us-central1`
     - Transfer data to Bucket: `gsutil cp *.parquet gs://imdb-data-2024/`
 3. Create GCP BigQuery: `bq mk imdb_dataset`
-4. Transfer data to BigQuery
-    - `bq load --source_format=PARQUET imdb_dataset.title_basics gs://imdb-data-2024/title.basics.parquet`
-    - `bq load --source_format=PARQUET imdb_dataset.title_ratings gs://imdb-data-2024/title.ratings.parquet`
-    - `bq load --source_format=PARQUET imdb_dataset.title_crew gs://imdb-data-2024/title.crew.parquet`
-    - `bq load --source_format=PARQUET imdb_dataset.name_basics gs://imdb-data-2024/name.basics.parquet`
-   - `bq load --source_format=PARQUET imdb_dataset.title_principals gs://imdb-data-2024/title.principals.parquet`
+4. Transfer data to BigQuery: `bq load --source_format=PARQUET imdb_dataset.title_basics gs://imdb-data-2024/title.basics.parquet` (same with other data)
 
 ### dbt - data build tool
 1. Create dbt account by putting JSON key from GCP Service Account
