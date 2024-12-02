@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: imdb_dataset
+    database: imdb-analytics-2024  # BigQuery project ID
+    schema: imdb_dataset           # BigQuery dataset 
+    tables:
+      - name: name_basics
+      - name: title_basics
+      - name: title_crew
+      - name: title_principals
+      - name: title_ratings
