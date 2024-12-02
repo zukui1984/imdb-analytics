@@ -4,11 +4,11 @@ Based data March 18, 2024 the datasets on this page are backed by a new data sou
 *	https://datasets.imdbws.com/title.ratings.tsv.gz
 *	https://datasets.imdbws.com/title.crew.tsv.gz
 *	https://datasets.imdbws.com/name.basics.tsv.gz
-*	https://datasets.imdbws.com/title.principals.tsv.gz 
+*	https://datasets.imdbws.com/title.principals.tsv.gz
 
 ### Table Content
 1. Google Cloud Platform (GCP): BigQuery & GCS
-2. VS Code using GCP 
+2. VS Code with GCP 
 3. dbt - data build tool
 
 ### Installation:
@@ -30,7 +30,10 @@ Based data March 18, 2024 the datasets on this page are backed by a new data sou
     - Sign up on GCP platform https://cloud.google.com/
     - Authenticate the SDK with your GCP account `gcloud auth login` then set default of project `gcloud config set project PROJECT_ID`
     - Enable API Library - **Compute Engine, Storage Admin, BigQuery Admin, Owner**
-    - Create API Key on Service Accounts (IAM) and this key information will be use on dbt
+    - Create private JSON Key on Service Accounts (IAM) and this key information will be use on dbt
+<img src=https://github.com/user-attachments/assets/ebb2cc8a-18dc-4e14-b79d-69ecc1e43d0e width=500>
+<img src=https://github.com/user-attachments/assets/89c8846d-9576-4049-b047-2c418aee5817 width=430>
+
 2. Create GCP Bucket: `gcloud storage buckets create gs://imdb-data-2024 --location=us-central1`
     - Transfer data to Bucket: `gsutil cp *.parquet gs://imdb-data-2024/`
 3. Create GCP BigQuery: `bq mk imdb_dataset`
