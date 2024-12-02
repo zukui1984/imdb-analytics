@@ -50,6 +50,9 @@ Based data March 18, 2024 the datasets on this page are backed by a new data sou
    - `top_rated_movies.sql` then run `dbt run --select top_rated_movies`
 4. dbt testing
    - Create file on “Macros folder”: `positive_values.sql` then apply `dbt run`
+   - Add packages.yml then run `dpt deps` to update the packages
+   - Add movies_with_rating.yml & top_rated_movies.yml
+   - Run `dbt compile` to generates executable SQL from source model, test, and analysis files.
 
 
 
