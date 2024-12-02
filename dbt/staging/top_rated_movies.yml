@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: top_rated_movies
+    description: "View of movies with rating 8.0 or higher"
+
+    columns:
+      - name: movie_title
+        description: "The primary title of the movie"
+        tests:
+          - not_null
+
+      - name: release_year
+        description: "Year when the movie was released"
+        tests:
+          - not_null
+
+      - name: genres
+        description: "Movie genres"
+
+      - name: averageRating
+        description: "Average rating (8.0 or higher)"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 8.0
+              max_value: 10.0
