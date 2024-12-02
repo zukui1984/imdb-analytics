@@ -12,7 +12,8 @@ Based data March 18, 2024 the datasets on this page are backed by a new data sou
 3. dbt - data build tool
 
 ### Installation:
-*	pip install google-cloud-storage 
+*	pip install google-cloud-storage
+*	pip install pandas pyarrow: **to convert .parquet**
 *	pip install dbt-bigquery
 *	Terraform sudo apt-get update && sudo apt-get install -y gnupg software-properties-commonGCP
 
