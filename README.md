@@ -23,7 +23,7 @@ Based data March 18, 2024 the datasets on this page are backed by a new data sou
 * `gunzip title.basics.tsv.gz` (all datas)
 ...   
   
-2. Convert into .parquet (code - data.py)
+2. Convert into .parquet [link](https://github.com/zukui1984/imdb-analytics/blob/master/data.py)
 
 ### GCP Process
 1. Setup GCP
@@ -35,19 +35,28 @@ Based data March 18, 2024 the datasets on this page are backed by a new data sou
     - Transfer data to Bucket: `gsutil cp *.parquet gs://imdb-data-2024/`
 3. Create GCP BigQuery: `bq mk imdb_dataset`
 4. Transfer data to BigQuery: `bq load --source_format=PARQUET imdb_dataset.title_basics gs://imdb-data-2024/title.basics.parquet` (same with other data)
+<img src=https://github.com/user-attachments/assets/8a56ab56-385a-4d0d-abd7-e731108ba38b width=400>
+
 
 ### dbt - data build tool
 1. Create dbt account by putting JSON key from GCP Service Account
-2. Change name of project on "dbt_project.yml"
-3. Create "Staging Folder" with files on "Model Folder"
-   - `schema.yaml`
-   - `movies_with_rating.sql` then run `dbt run --select movies_with_ratings`
-   - `top_rated_movies.sql` then run `dbt run --select top_rated_movies`
-4. dbt testing
-   - Create file on “Macros folder”: `positive_values.sql` then apply `dbt run`
+<img src=https://github.com/user-attachments/assets/7b6d7ef6-cb4c-46f9-9b38-57206192306d width="500">
+
+2. Change name of project on `dbt_project.yml`
+2. Create "Staging Folder" with files on "Model Folder"
+   - `schema.yaml` [link](https://github.com/zukui1984/imdb-analytics/blob/master/dbt/staging/schema.yaml)
+   - `movies_with_rating.sql` then run `dbt run --select movies_with_ratings` [link](https://github.com/zukui1984/imdb-analytics/blob/master/dbt/staging/movies_with_ratings.sql)
+   - `top_rated_movies.sql` then run `dbt run --select top_rated_movies` [link](https://github.com/zukui1984/imdb-analytics/blob/master/dbt/staging/top_rated_movies.sql)
+<img src=https://github.com/user-attachments/assets/ee76898c-3898-4fb8-abb6-1af32aa95426 width="300">
+  
+5. dbt testing
+   - Create file on “Macros folder”: `positive_values.sql` then apply `dbt run` 
    - Add packages.yml then run `dpt deps` to update the packages
    - Add movies_with_rating.yml & top_rated_movies.yml
    - Run `dbt compile` to generates executable SQL from source model, test, and analysis files.
+   - To test run `dbt test`
+  <img src=https://github.com/user-attachments/assets/d69f2179-ca07-4a5b-a5b0-99d61a1a25d1 width=400>
+
 
 
 
