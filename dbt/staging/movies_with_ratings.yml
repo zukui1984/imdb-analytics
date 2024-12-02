@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: movies_with_ratings
+    description: "Combines movie basic information with their ratings"
+    columns:
+      - name: numVotes
+        description: "Number of votes received"
+        tests:
+          - not_null
+          - positive_values
