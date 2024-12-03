@@ -14,8 +14,6 @@ Based data March 18, 2024 the datasets on this page are backed by a new data sou
 ### Installation:
 *	pip install google-cloud-storage
 *	pip install pandas pyarrow: **to convert .parquet**
-*	pip install dbt-bigquery
-*	Terraform sudo apt-get update && sudo apt-get install -y gnupg software-properties-commonGCP
 
 ### Process:
 1. Download imdb data and extract it
