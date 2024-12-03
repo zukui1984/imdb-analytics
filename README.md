@@ -47,14 +47,14 @@ Based data March 18, 2024 the datasets on this page are backed by a new data sou
 <img src=https://github.com/user-attachments/assets/7b6d7ef6-cb4c-46f9-9b38-57206192306d width="500">
 
 2. Change name of project on `dbt_project.yml`
-2. Create "Staging Folder" with files on "Model Folder"
+2. Create **staging folder** with files on **model folder**
    - `schema.yaml` [link](https://github.com/zukui1984/imdb-analytics/blob/master/dbt/staging/schema.yaml)
    - `movies_with_rating.sql` then run `dbt run --select movies_with_ratings` [link](https://github.com/zukui1984/imdb-analytics/blob/master/dbt/staging/movies_with_ratings.sql)
    - `top_rated_movies.sql` then run `dbt run --select top_rated_movies` [link](https://github.com/zukui1984/imdb-analytics/blob/master/dbt/staging/top_rated_movies.sql)
 <img src=https://github.com/user-attachments/assets/ee76898c-3898-4fb8-abb6-1af32aa95426 width="300">
   
 5. dbt testing
-   - Create file on “Macros folder”: `positive_values.sql` then apply `dbt run` 
+   - Create file on **macros folder**: `positive_values.sql` then apply `dbt run` 
    - Add `packages.yml` then run `dpt deps` to update the packages
    - Add `movies_with_rating.yml` & `top_rated_movies.yml`
    - Run `dbt compile` to generates executable SQL from source model, test, and analysis files.
